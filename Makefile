@@ -1,13 +1,13 @@
 LDOPTS=-lGL -lGLU -lglut -lm
 
 onthefly: onthefly.C
-	gcc -ansi -pedantic -O3 onthefly.C $(LDOPTS) -o onthefly
+	g++ -ansi -pedantic -O3 onthefly.C $(LDOPTS) -o onthefly
 	strip onthefly
 
 debug: onthefly.debug
 
 onthefly.debug: onthefly.C
-	gcc -ggdb -pg onthefly.C $(LDOPTS) -o onthefly.debug
+	g++ -ggdb -pg onthefly.C $(LDOPTS) -o onthefly.debug
 
 test: onthefly
 	./onthefly
